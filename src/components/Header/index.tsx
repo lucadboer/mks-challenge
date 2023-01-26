@@ -1,5 +1,5 @@
-import { ShoppingCart } from 'phosphor-react'
-import { CartButton, HeaderContainer, Logo } from './styles'
+import { CartButton } from '../CartButton'
+import { HeaderContainer, Logo } from './styles'
 
 export function Header() {
   return (
@@ -8,10 +8,8 @@ export function Header() {
         <strong>MKS</strong>
         <span>Sistemas</span>
       </Logo>
-      <CartButton>
-        <ShoppingCart weight="bold" size={20} />
-        <span>0</span>
-      </CartButton>
+
+      <CartButton />
     </HeaderContainer>
   )
 }

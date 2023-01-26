@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  position: sticky;
   height: 6.3125rem;
   display: flex;
   justify-content: space-between;
@@ -24,19 +23,4 @@ export const Logo = styled.div`
     font-size: 1.25rem;
     font-weight: 300;
   }
-`
-
-export const CartButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  padding: 0.65rem 0.75rem;
-  margin-right: 5.5rem;
-
-  font-weight: bold;
-  background-color: #fff;
-  border-radius: 8px;
-
-  cursor: pointer;
 `
