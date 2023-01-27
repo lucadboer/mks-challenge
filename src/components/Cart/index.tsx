@@ -30,7 +30,6 @@ export function Cart() {
             <Image src={smartWatch} width={45} height={60} alt="" />
             <span>Apple Watch Series 4 GPS</span>
             <ProductQuantityContainer>
-              <span>Qtd:</span>
               <QuantityInput />
             </ProductQuantityContainer>
             <ProductPrice>R$399</ProductPrice>

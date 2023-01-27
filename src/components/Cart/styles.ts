@@ -61,14 +61,34 @@ export const CartProduct = styled.div`
   display: flex;
   align-items: center;
   padding: 1.1875rem 1.4375rem;
+  min-width: 24rem;
   background-color: ${({ theme }) => theme.colors.card.primary};
 
   border-radius: 8px;
+
+  span {
+    max-width: 7rem;
+    margin-left: 1.25rem;
+  }
 `
 
-export const ProductQuantityContainer = styled.div``
+export const ProductQuantityContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 9px;
 
-export const ProductPrice = styled.strong``
+  gap: 0.25rem;
+
+  span {
+    font-size: 8px;
+  }
+`
+
+export const ProductPrice = styled.strong`
+  margin-left: 2.5rem;
+`
 
 export const CartDetails = styled.div``
 

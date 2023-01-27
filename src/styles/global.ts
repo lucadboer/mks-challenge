@@ -36,6 +36,14 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
   }
 
+  input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+  input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
   @keyframes pulse {
     0%, 100% {
       opacity: 1;
