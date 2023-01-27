@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 4.5rem;
-  padding: 0.3rem 0.5rem;
-  margin-left: 1.45rem;
+  width: 4rem;
+  padding: 0.2rem 0.4rem;
+  margin-left: 1rem;
 
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 4px;

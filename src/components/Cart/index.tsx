@@ -1,8 +1,10 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'phosphor-react'
 import {
+  CartBuyButton,
   CartClose,
   CartContent,
+  CartDetails,
   CartProduct,
   CartProductsContainer,
   CartTitle,
@@ -35,6 +37,13 @@ export function Cart() {
             <ProductPrice>R$399</ProductPrice>
           </CartProduct>
         </CartProductsContainer>
+
+        <CartDetails>
+          <span>Total:</span>
+          <strong>R$798</strong>
+        </CartDetails>
+
+        <CartBuyButton>Finalizar Compra</CartBuyButton>
       </CartContent>
     </Dialog.Portal>
   )

@@ -55,6 +55,10 @@ export const CartProductsContainer = styled.main`
   align-items: center;
   gap: 1.75rem;
   padding: 0 3rem;
+
+  max-height: 25rem;
+  overflow-y: auto;
+  overflow-x: hidden;
 `
 
 export const CartProduct = styled.div`
@@ -67,7 +71,7 @@ export const CartProduct = styled.div`
   border-radius: 8px;
 
   span {
-    max-width: 7rem;
+    min-width: 7rem;
     margin-left: 1.25rem;
   }
 `
@@ -88,8 +92,19 @@ export const ProductQuantityContainer = styled.div`
 
 export const ProductPrice = styled.strong`
   margin-left: 2.5rem;
+  font-weight: bold;
 `
 
-export const CartDetails = styled.div``
+export const CartDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0 3rem;
+
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  color: ${({ theme }) => theme.colors.text.secondary};
+`
 
 export const CartBuyButton = styled.div``
