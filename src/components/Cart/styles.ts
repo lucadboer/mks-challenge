@@ -7,8 +7,16 @@ export const CartContent = styled(Dialog.Content)`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 30rem;
+  width: 100%;
+  max-width: 30rem;
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(100%);
+
   background-color: ${({ theme }) => theme.colors.brand};
+  box-shadow: -5px 0 6px rgb(0 0 0 / 0.35);
 `
 
 export const CartClose = styled(Dialog.Close)`
@@ -95,7 +103,7 @@ export const ProductPrice = styled.strong`
   font-weight: bold;
 `
 
-export const CartDetails = styled.div`
+export const CartDetails = styled.footer`
   display: flex;
   justify-content: space-between;
   margin-top: auto;
@@ -107,4 +115,25 @@ export const CartDetails = styled.div`
   color: ${({ theme }) => theme.colors.text.secondary};
 `
 
-export const CartBuyButton = styled.div``
+export const CartBuyButton = styled.div`
+  height: 6rem;
+  margin-top: 2.625rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  color: ${({ theme }) => theme.colors.text.secondary};
+  background-color: ${({ theme }) => theme.colors.card.tertiary};
+
+  transition: color 0.2s;
+
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.brand};
+  }
+`
