@@ -1,6 +1,26 @@
 import * as Dialog from '@radix-ui/react-dialog'
 
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const translateIn = keyframes`
+  from {
+    transform: translate(100%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+`
+
+const translateOut = keyframes`
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(100%);
+  }
+`
 
 export const CartContent = styled(Dialog.Content)`
   position: fixed;
@@ -13,10 +33,14 @@ export const CartContent = styled(Dialog.Content)`
   display: flex;
   flex-direction: column;
 
-  transform: translateX(100%);
-
   background-color: ${({ theme }) => theme.colors.brand};
   box-shadow: -5px 0 6px rgb(0 0 0 / 0.35);
+
+  animation: ${translateIn} 0.4s linear;
+
+  &[data-state='closed'] {
+    animation: ${translateOut} 0.4s linear;
+  }
 `
 
 export const CartClose = styled(Dialog.Close)`
