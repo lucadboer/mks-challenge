@@ -11,11 +11,10 @@ export const ProductsContainer = styled.main`
 `
 
 export const Footer = styled.footer`
-  position: absolute;
   width: 100%;
   padding: 0.5rem;
-  bottom: 0;
   text-align: center;
+  margin-top: 10rem;
 
   background-color: ${({ theme }) => theme.colors.background.secondary};
 `

@@ -42,6 +42,7 @@ export const ProductInfo = styled.div`
 
 export const ProductDetails = styled.p`
   margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
   font-size: 0.625rem;
   font-weight: 300;
   padding: 0 1rem;
@@ -50,7 +51,7 @@ export const ProductDetails = styled.p`
 `
 
 export const BuyButton = styled.button`
-  margin-top: 0.75rem;
+  margin-top: auto;
   height: 2rem;
 
   display: flex;
