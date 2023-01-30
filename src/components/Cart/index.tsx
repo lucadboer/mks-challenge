@@ -10,13 +10,19 @@ import {
   CartTitle,
   ProductPrice,
   ProductQuantityContainer,
+  RemoveProductButton,
 } from './styles'
 
-import smartWatch from '../../assets/apple-watch.svg'
 import Image from 'next/image'
 import { QuantityInput } from '../QuantityInput'
+import { useSelector } from 'react-redux'
+import { selectCartItems } from '@/redux/slice/cart'
+import { ProductData } from '@/@types/ProductData'
 
 export function Cart() {
+  const cartItems = useSelector(selectCartItems)
+  console.log(cartItems)
+
   return (
     <Dialog.Portal>
       <CartContent>
@@ -28,14 +34,21 @@ export function Cart() {
         </CartTitle>
 
         <CartProductsContainer>
-          <CartProduct>
-            <Image src={smartWatch} width={45} height={60} alt="" />
-            <span>Apple Watch Series 4 GPS</span>
-            <ProductQuantityContainer>
-              <QuantityInput />
-            </ProductQuantityContainer>
-            <ProductPrice>R$399</ProductPrice>
-          </CartProduct>
+          {cartItems.map((cartItem: ProductData) => {
+            return (
+              <CartProduct key={cartItem.id}>
+                <RemoveProductButton>
+                  <X size={12} />
+                </RemoveProductButton>
+                <Image src={cartItem.photo} width={45} height={60} alt="" />
+                <span>{cartItem.name}</span>
+                <ProductQuantityContainer>
+                  <QuantityInput />
+                </ProductQuantityContainer>
+                <ProductPrice>R${cartItem.price / 1}</ProductPrice>
+              </CartProduct>
+            )
+          })}
         </CartProductsContainer>
 
         <CartDetails>

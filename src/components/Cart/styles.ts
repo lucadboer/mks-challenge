@@ -82,6 +82,7 @@ export const CartTitle = styled(Dialog.Title)`
 
 export const CartProductsContainer = styled.main`
   margin-top: 4.375rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,7 +94,29 @@ export const CartProductsContainer = styled.main`
   overflow-x: hidden;
 `
 
+export const RemoveProductButton = styled.button`
+  position: absolute;
+  top: -5px;
+  right: 0;
+  z-index: 70;
+
+  width: 1.25rem;
+  height: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ${({ theme }) => theme.colors.card.tertiary};
+  color: ${({ theme }) => theme.colors.text.secondary};
+
+  border-radius: 9999px;
+
+  cursor: pointer;
+`
+
 export const CartProduct = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   padding: 1.1875rem 1.4375rem;
@@ -101,6 +124,11 @@ export const CartProduct = styled.div`
   background-color: ${({ theme }) => theme.colors.card.primary};
 
   border-radius: 8px;
+
+  img {
+    object-fit: contain;
+    width: 4rem;
+  }
 
   span {
     min-width: 7rem;
