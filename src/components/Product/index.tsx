@@ -9,12 +9,20 @@ import {
 } from './styles'
 import { Bag } from 'phosphor-react'
 import { ProductData } from '@/@types/ProductData'
+import { useDispatch } from 'react-redux'
+import { addItemToCart } from '@/redux/slice/cart'
 
 interface ProductProps {
   product: ProductData
 }
 
 export function Product({ product }: ProductProps) {
+  const dispatch = useDispatch()
+
+  function handleAddProductToCart() {
+    dispatch(addItemToCart(product))
+  }
+
   return (
     <ProductCard>
       <ProductImageContainer>
@@ -27,7 +35,7 @@ export function Product({ product }: ProductProps) {
       <ProductDetails>
         Redesigned from scratch and completely revised.
       </ProductDetails>
-      <BuyButton>
+      <BuyButton onClick={handleAddProductToCart}>
         <Bag weight="bold" />
         COMPRAR
       </BuyButton>

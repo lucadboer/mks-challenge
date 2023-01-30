@@ -14,10 +14,10 @@ export const slice = createSlice({
   initialState,
   reducers: {
     addItemToCart(state, { payload }) {
-      const { productId } = payload
+      const { id } = payload
 
       const checkIfItemAlreadyExists = state.items.some(
-        (item) => item.id === productId,
+        (item) => item.id === id,
       )
 
       if (!checkIfItemAlreadyExists) {
@@ -28,5 +28,7 @@ export const slice = createSlice({
 })
 
 export const { addItemToCart } = slice.actions
+
+export const selectCartItems = (state) => state.cart.items
 
 export const cartReducer = slice.reducer
