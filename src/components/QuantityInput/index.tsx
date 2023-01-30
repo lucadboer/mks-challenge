@@ -1,15 +1,31 @@
+import { changeItemQuantity } from '@/redux/slice/cart'
 import { Minus, Plus } from 'phosphor-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Container, MinusButton, MoreButton, Quantity } from './styles'
 
-export function QuantityInput() {
-  const [quantity, setQuantity] = useState(0)
+interface QuantityInputProps {
+  productId: number
+}
+
+export function QuantityInput({ productId }: QuantityInputProps) {
+  const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(
+      changeItemQuantity({
+        productId,
+        quantity,
+      }),
+    )
+  }, [quantity])
 
   return (
     <Container>
       <MinusButton
         onClick={() => {
-          if (quantity <= 0) {
+          if (quantity === 1) {
             return
           }
           setQuantity((state) => state - 1)

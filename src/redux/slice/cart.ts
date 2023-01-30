@@ -5,6 +5,10 @@ export interface CartItem {
   items: ProductData[]
 }
 
+export interface CartState {
+  cart: CartItem
+}
+
 const initialState: CartItem = {
   items: [],
 }
@@ -24,11 +28,24 @@ export const slice = createSlice({
         state.items.push(payload)
       }
     },
+    removeItemFromCart(state, { payload }) {
+      const { id } = payload
+
+      state.items = state.items.filter((item) => item.id !== id)
+    },
+
+    changeItemQuantity(state, { payload: { productId, quantity } }) {
+      const index = state.items.findIndex((item) => item.id === productId)
+      if (index >= 0) {
+        state.items[index].quantity = quantity
+      }
+    },
   },
 })
 
-export const { addItemToCart } = slice.actions
+export const { addItemToCart, removeItemFromCart, changeItemQuantity } =
+  slice.actions
 
-export const selectCartItems = (state) => state.cart.items
+export const selectCartItems = (state: CartState) => state.cart.items
 
 export const cartReducer = slice.reducer

@@ -15,13 +15,18 @@ import {
 
 import Image from 'next/image'
 import { QuantityInput } from '../QuantityInput'
-import { useSelector } from 'react-redux'
-import { selectCartItems } from '@/redux/slice/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeItemFromCart, selectCartItems } from '@/redux/slice/cart'
 import { ProductData } from '@/@types/ProductData'
+import { CartEmpity } from '../CartEmpity'
 
 export function Cart() {
   const cartItems = useSelector(selectCartItems)
-  console.log(cartItems)
+  const dispatch = useDispatch()
+
+  function handleRemoveProductFromCart(cartItem: ProductData) {
+    dispatch(removeItemFromCart(cartItem))
+  }
 
   return (
     <Dialog.Portal>
@@ -34,26 +39,42 @@ export function Cart() {
         </CartTitle>
 
         <CartProductsContainer>
-          {cartItems.map((cartItem: ProductData) => {
-            return (
-              <CartProduct key={cartItem.id}>
-                <RemoveProductButton>
-                  <X size={12} />
-                </RemoveProductButton>
-                <Image src={cartItem.photo} width={45} height={60} alt="" />
-                <span>{cartItem.name}</span>
-                <ProductQuantityContainer>
-                  <QuantityInput />
-                </ProductQuantityContainer>
-                <ProductPrice>R${cartItem.price / 1}</ProductPrice>
-              </CartProduct>
-            )
-          })}
+          {cartItems.length === 0 ? (
+            <CartEmpity />
+          ) : (
+            cartItems.map((cartItem: ProductData) => {
+              return (
+                <CartProduct key={cartItem.id}>
+                  <RemoveProductButton
+                    onClick={() => {
+                      handleRemoveProductFromCart(cartItem)
+                    }}
+                  >
+                    <X size={12} />
+                  </RemoveProductButton>
+                  <Image src={cartItem.photo} width={45} height={60} alt="" />
+                  <span>{cartItem.name}</span>
+                  <ProductQuantityContainer>
+                    <QuantityInput productId={cartItem.id} />
+                  </ProductQuantityContainer>
+                  <ProductPrice>
+                    R${cartItem.price * cartItem.quantity}
+                  </ProductPrice>
+                </CartProduct>
+              )
+            })
+          )}
         </CartProductsContainer>
 
         <CartDetails>
           <span>Total:</span>
-          <strong>R$798</strong>
+          <strong>
+            R$
+            {cartItems.reduce(
+              (sum, cartItem) => sum + cartItem.price * cartItem.quantity,
+              0,
+            )}
+          </strong>
         </CartDetails>
 
         <CartBuyButton>Finalizar Compra</CartBuyButton>

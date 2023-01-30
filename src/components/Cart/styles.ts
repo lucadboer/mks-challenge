@@ -87,7 +87,7 @@ export const CartProductsContainer = styled.main`
   flex-direction: column;
   align-items: center;
   gap: 1.75rem;
-  padding: 0 3rem;
+  padding: 0.75rem 3rem;
 
   max-height: 25rem;
   overflow-y: auto;
@@ -97,7 +97,7 @@ export const CartProductsContainer = styled.main`
 export const RemoveProductButton = styled.button`
   position: absolute;
   top: -5px;
-  right: 0;
+  right: -5px;
   z-index: 70;
 
   width: 1.25rem;
