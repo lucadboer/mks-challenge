@@ -1,35 +1,35 @@
+import { GetStaticProps } from 'next'
+import { ProductData } from '@/@types/ProductData'
+import axios from 'axios'
+
 import { Header } from '@/components/Header'
 import { Footer, ProductsContainer } from '@/styles/home'
 import { Product } from '@/components/Product'
-import { ProductData } from '@/@types/ProductData'
-import axios from 'axios'
-import { GetStaticProps } from 'next'
-// import { useEffect, useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 interface HomeProps {
   products: ProductData[]
 }
 
 export default function Home({ products }: HomeProps) {
-  // const [products, setProducts] = useState<ProductData[]>([])
-
-  // async function teste() {
-  //   const response = await axios.get(
-  //     'https://mks-challenge-api-frontend.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=DESC',
-  //   )
-  //   setProducts(response.data.products)
-  // }
-
-  // useEffect(() => {
-  //   teste()
-  // }, [])
-
-  console.log(products)
-
   return (
     <div>
       <Header />
       <ProductsContainer>
+        <ToastContainer
+          position="top-right"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          closeOnClick
+          rtl={false}
+          draggable
+          theme="light"
+        />
         {products.map((product) => {
           return <Product key={product.id} product={product} />
         })}
