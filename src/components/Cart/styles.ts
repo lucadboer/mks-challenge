@@ -112,6 +112,10 @@ export const CartProductsContainer = styled.main`
   }
 
   @media (max-width: 564px) {
+    max-height: 20rem;
+  }
+
+  @media (max-width: 2160px) {
     max-height: 30rem;
   }
 `

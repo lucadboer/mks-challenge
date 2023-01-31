@@ -16,10 +16,9 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   return (
     <div>
-      <Header />
       <ToastContainer
         position="top-right"
-        autoClose={2500}
+        autoClose={1250}
         hideProgressBar={false}
         newestOnTop={false}
         pauseOnFocusLoss={false}
@@ -29,6 +28,9 @@ export default function Home({ products }: HomeProps) {
         draggable
         theme="light"
       />
+
+      <Header />
+
       <ProductsContainer>
         {products.map((product) => {
           return <Product key={product.id} product={product} />
