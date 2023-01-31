@@ -28,7 +28,7 @@ export const CartContent = styled(Dialog.Content)`
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 30rem;
+  max-width: 30.5rem;
 
   display: flex;
   flex-direction: column;
@@ -40,6 +40,10 @@ export const CartContent = styled(Dialog.Content)`
 
   &[data-state='closed'] {
     animation: ${translateOut} 0.4s linear;
+  }
+
+  @media (max-width: 564px) {
+    max-width: 21rem;
   }
 `
 
@@ -92,6 +96,24 @@ export const CartProductsContainer = styled.main`
   max-height: 25rem;
   overflow-y: auto;
   overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    border: 1px solid black;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.card.secondary};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 564px) {
+    max-height: 30rem;
+  }
 `
 
 export const RemoveProductButton = styled.button`
@@ -134,6 +156,34 @@ export const CartProduct = styled.div`
     min-width: 7rem;
     margin-left: 1.25rem;
   }
+
+  @media (max-width: 564px) {
+    flex-direction: column;
+    min-width: 15.5rem;
+    padding: 1.1875rem 0;
+
+    text-align: center;
+
+    img {
+      object-fit: contain;
+      width: 5rem;
+    }
+
+    span {
+      font-size: 1rem;
+      padding: 1rem 0;
+    }
+  }
+`
+
+export const ContainerQuantityAndPrice = styled.div`
+  display: flex;
+
+  @media (max-width: 564px) {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
 `
 
 export const ProductQuantityContainer = styled.div`
@@ -153,6 +203,18 @@ export const ProductQuantityContainer = styled.div`
 export const ProductPrice = styled.strong`
   margin-left: 2.5rem;
   font-weight: bold;
+
+  @media (max-width: 564px) {
+    padding: 0.5rem 0.75rem;
+    margin: auto;
+
+    font-size: 0.9375rem;
+
+    background-color: ${({ theme }) => theme.colors.card.secondary};
+    color: ${({ theme }) => theme.colors.text.secondary};
+
+    border-radius: 5px;
+  }
 `
 
 export const CartDetails = styled.footer`

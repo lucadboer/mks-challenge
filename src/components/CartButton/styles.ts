@@ -19,4 +19,8 @@ export const CartButtonContainer = styled.button`
   &:hover {
     opacity: 0.85;
   }
+
+  @media (max-width: 768px) {
+    margin-right: 1.25rem;
+  }
 `

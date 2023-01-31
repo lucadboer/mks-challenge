@@ -16,13 +16,29 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${theme.colors.background.primary};
       color: ${theme.colors.text.primary};
     `}
+
+
   }
 
   body, input, textarea, button, select {
     font: 400 1rem ${({ theme }) => theme.fonts.primary};
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      border: 1px solid black;
+    }
+    
+    &::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.card.secondary};
   }
+
+    &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px
+  }
+}
 
   a, button {
     cursor: pointer;

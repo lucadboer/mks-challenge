@@ -6,6 +6,10 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.brand};
+
+  @media (max-width: 768px) {
+    height: 5rem;
+  }
 `
 
 export const Logo = styled.div`
@@ -22,5 +26,9 @@ export const Logo = styled.div`
   span {
     font-size: 1.25rem;
     font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    margin: 1.25rem;
   }
 `

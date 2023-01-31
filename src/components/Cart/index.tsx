@@ -8,6 +8,7 @@ import {
   CartProduct,
   CartProductsContainer,
   CartTitle,
+  ContainerQuantityAndPrice,
   ProductPrice,
   ProductQuantityContainer,
   RemoveProductButton,
@@ -54,12 +55,15 @@ export function Cart() {
                   </RemoveProductButton>
                   <Image src={cartItem.photo} width={45} height={60} alt="" />
                   <span>{cartItem.name}</span>
-                  <ProductQuantityContainer>
-                    <QuantityInput productId={cartItem.id} />
-                  </ProductQuantityContainer>
-                  <ProductPrice>
-                    R${cartItem.price * cartItem.quantity}
-                  </ProductPrice>
+
+                  <ContainerQuantityAndPrice>
+                    <ProductQuantityContainer>
+                      <QuantityInput productId={cartItem.id} />
+                    </ProductQuantityContainer>
+                    <ProductPrice>
+                      R${cartItem.price * cartItem.quantity}
+                    </ProductPrice>
+                  </ContainerQuantityAndPrice>
                 </CartProduct>
               )
             })

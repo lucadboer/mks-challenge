@@ -38,6 +38,12 @@ export const ProductInfo = styled.div`
 
     border-radius: 5px;
   }
+
+  @media (max-width: 1024px) {
+    strong {
+      margin-right: 0.75rem;
+    }
+  }
 `
 
 export const ProductDetails = styled.p`
@@ -48,6 +54,10 @@ export const ProductDetails = styled.p`
   padding: 0 1rem;
 
   color: ${({ theme }) => theme.colors.text.primary};
+
+  @media (max-width: 1024px) {
+    font-size: 0.85rem;
+  }
 `
 
 export const BuyButton = styled.button`
