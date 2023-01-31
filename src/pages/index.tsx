@@ -17,19 +17,19 @@ export default function Home({ products }: HomeProps) {
   return (
     <div>
       <Header />
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="light"
+      />
       <ProductsContainer>
-        <ToastContainer
-          position="top-right"
-          autoClose={2500}
-          hideProgressBar={false}
-          newestOnTop={false}
-          pauseOnFocusLoss={false}
-          pauseOnHover={false}
-          closeOnClick
-          rtl={false}
-          draggable
-          theme="light"
-        />
         {products.map((product) => {
           return <Product key={product.id} product={product} />
         })}
