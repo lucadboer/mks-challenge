@@ -33,4 +33,8 @@ export const Quantity = styled.input`
   border: 0;
   width: 0.8rem;
   text-align: center;
+
+  @media (max-width: 564px) {
+    font-size: 1rem;
+  }
 `

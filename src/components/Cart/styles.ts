@@ -112,6 +112,7 @@ export const CartProductsContainer = styled.main`
   }
 
   @media (max-width: 564px) {
+    margin-top: 1.25rem;
     max-height: 20rem;
   }
 
@@ -231,6 +232,10 @@ export const CartDetails = styled.footer`
   font-weight: bold;
 
   color: ${({ theme }) => theme.colors.text.secondary};
+
+  @media (max-width: 564px) {
+    font-size: 1.75rem;
+  }
 `
 
 export const CartBuyButton = styled.div`
@@ -253,5 +258,13 @@ export const CartBuyButton = styled.div`
 
   &:hover {
     color: ${({ theme }) => theme.colors.brand};
+  }
+
+  @media (max-width: 564px) {
+    margin-top: 2rem;
+
+    height: 100%;
+    max-height: 4rem !important;
+    font-size: 1.25rem;
   }
 `

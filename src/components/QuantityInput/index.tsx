@@ -31,7 +31,7 @@ export function QuantityInput({ productId }: QuantityInputProps) {
           setQuantity((state) => state - 1)
         }}
       >
-        <Minus size={8} />
+        <Minus size={10} weight="bold" />
       </MinusButton>
       <Quantity type={'number'} disabled value={quantity} />
       <MoreButton
@@ -39,7 +39,7 @@ export function QuantityInput({ productId }: QuantityInputProps) {
           setQuantity((state) => state + 1)
         }}
       >
-        <Plus size={8} />
+        <Plus size={10} weight="bold" />
       </MoreButton>
     </Container>
   )
