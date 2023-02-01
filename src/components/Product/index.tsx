@@ -9,9 +9,10 @@ import {
 } from './styles'
 import { Bag } from 'phosphor-react'
 import { ProductData } from '@/@types/ProductData'
-import { useDispatch, useSelector } from 'react-redux'
-import { addItemToCart, selectCartItems } from '@/redux/slice/cart'
+import { useDispatch } from 'react-redux'
+import { addItemToCart } from '@/redux/slice/cart'
 import { toast } from 'react-toastify'
+import { useCartItems } from '@/hooks/useCart'
 
 interface ProductProps {
   product: ProductData
@@ -19,7 +20,7 @@ interface ProductProps {
 
 export function Product({ product }: ProductProps) {
   const dispatch = useDispatch()
-  const cartItems = useSelector(selectCartItems)
+  const cartItems = useCartItems()
 
   function handleAddProductToCart() {
     const checkIfItemAlreadyExists = cartItems.some(

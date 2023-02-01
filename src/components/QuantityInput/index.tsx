@@ -1,4 +1,4 @@
-import { changeItemQuantity } from '@/redux/slice/cart'
+import { changeItemQuantity } from '../../redux/slice/cart'
 import { Minus, Plus } from 'phosphor-react'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'

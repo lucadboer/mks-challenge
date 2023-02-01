@@ -1,13 +1,12 @@
-import { selectCartItems } from '@/redux/slice/cart'
+import { useCartItems } from '../../hooks/useCart'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { ShoppingCart } from 'phosphor-react'
-import { useSelector } from 'react-redux'
 import { Cart } from '../Cart'
 import { CartButtonContainer } from './styles'
 
 export function CartButton() {
-  const cartItems = useSelector(selectCartItems)
+  const cartItems = useCartItems()
 
   return (
     <Dialog.Root>

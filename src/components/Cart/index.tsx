@@ -16,13 +16,14 @@ import {
 
 import Image from 'next/image'
 import { QuantityInput } from '../QuantityInput'
-import { useDispatch, useSelector } from 'react-redux'
-import { removeItemFromCart, selectCartItems } from '@/redux/slice/cart'
+import { useDispatch } from 'react-redux'
+import { removeItemFromCart } from '../../redux/slice/cart'
 import { ProductData } from '@/@types/ProductData'
 import { CartEmpity } from '../CartEmpity'
+import { useCartItems } from '../../hooks/useCart'
 
 export function Cart() {
-  const cartItems = useSelector(selectCartItems)
+  const cartItems = useCartItems()
   const dispatch = useDispatch()
 
   function handleRemoveProductFromCart(cartItem: ProductData) {

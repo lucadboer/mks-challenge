@@ -1,7 +1,7 @@
-import store from '@/redux/store'
-import { theme } from '@/styles/theme'
+import store from '../redux/store'
+import { theme } from '../styles/theme'
 import React from 'react'
-import { Provider as ReduxProvider } from 'react-redux'
+import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 interface TestWrapperComponentProps {
@@ -11,7 +11,7 @@ interface TestWrapperComponentProps {
 export const TestWrapperComponent: React.FC<TestWrapperComponentProps> = ({
   children,
 }) => (
-  <ReduxProvider store={store}>
+  <Provider store={store}>
     <ThemeProvider theme={theme}>{children}</ThemeProvider>
-  </ReduxProvider>
+  </Provider>
 )
