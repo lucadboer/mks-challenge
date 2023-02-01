@@ -10,9 +10,9 @@ import {
 import { Bag } from 'phosphor-react'
 import { ProductData } from '@/@types/ProductData'
 import { useDispatch } from 'react-redux'
-import { addItemToCart } from '@/redux/slice/cart'
+import { addItemToCart } from '../../redux/slice/cart'
 import { toast } from 'react-toastify'
-import { useCartItems } from '@/hooks/useCart'
+import { useCartItems } from '../../hooks/useCart'
 
 interface ProductProps {
   product: ProductData

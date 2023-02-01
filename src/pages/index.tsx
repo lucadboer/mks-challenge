@@ -2,14 +2,14 @@ import { GetStaticProps } from 'next'
 import { ProductData } from '@/@types/ProductData'
 import axios from 'axios'
 
-import { Header } from '@/components/Header'
-import { Footer, ProductsContainer } from '@/styles/home'
-import { Product } from '@/components/Product'
+import { Header } from '../components/Header'
+import { Footer, ProductsContainer } from '../styles/home'
+import { Product } from '../components/Product'
 import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 
-interface HomeProps {
+export interface HomeProps {
   products: ProductData[]
 }
 
@@ -50,6 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
   )
 
   const products = response.data.products
+  console.log(products)
 
   return {
     props: {
