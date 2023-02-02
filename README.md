@@ -18,7 +18,7 @@ This application was developed through a technical challenge, where the purpose 
 - Axios
 - Jest
 
-## 🧑‍💻 Applications
+## 💻 Applications
 
 - React Hooks
 - Immutability
