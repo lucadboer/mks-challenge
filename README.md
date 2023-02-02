@@ -1,38 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ignite Shop
 
-## Getting Started
+![preview1](./.github/preview1.png)
 
-First, run the development server:
+> Desafio Técnico proposto pela MKS Sistemas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Essa aplicação foi desenvolvida através de um desafio técnico, onde o propósito foi simular um e-commerce. Foi aplicado o conceito de SSG do Next.js e utilização de uma API disponibilizada para consumir no desafio. 
+
+This application was developed through a technical challenge, where the purpose was to simulate an e-commerce. Next.js SSG concept was applied and an API available to consume in the challenge was used
+
+## 🛠 Technologies
+
+- React
+- TypeScript
+- Next.js
+- Styled-Component
+- Redux Toolkit
+- Axios
+- Jest
+
+## 🧑‍💻 Applications
+
+- React Hooks
+- Immutability
+- Props
+- Components
+- SSG
+- API Consumption
+
+## 🪄 How to use?
+
+### Abra o terminal e copie este repositório em alguma pasta com o comando | Open terminal and copy this repository at some dir with the comand
+```
+$ git clone https://github.com/lucadboer/mks-challenge.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Acesse a pasta do projeto no prompt de comando ou pelo mouse | Access dir of the project in cmd or by mouse
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+$ cd ignite-shop
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Instale as dependências da aplicação | Install the dependecies of the application
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+$ npm install
+or
+$ yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Execute a aplicação | Run the application
 
-## Learn More
+```
+$ npm run dev
+or
+$ yarn run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Depois desses processos acesse http://localhost:3000 no seu navegador. | After this proccess access http://localhost:3000 in your browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Para os testes rode | for the tests run
 
-## Deploy on Vercel
+```
+$ npm test
+or
+$ yarn run test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 💛 Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Email --> luca.boer@outlook.com
+- Linkedin --> https://www.linkedin.com/in/luca-destefano-boer/
+- Portfolio --> https://about-luca.vercel.app/
