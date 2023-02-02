@@ -1,12 +1,12 @@
-# Ignite Shop
+# MKS-Challenge
 
 ![preview1](./.github/preview1.png)
 
 > Desafio Técnico proposto pela MKS Sistemas
 
-Essa aplicação foi desenvolvida através de um desafio técnico, onde o propósito foi simular um e-commerce. Foi aplicado o conceito de SSG do Next.js e utilização de uma API disponibilizada para consumir no desafio. 
+Essa aplicação foi desenvolvida através de um desafio técnico, onde o propósito foi simular um e-commerce. Foi aplicado o conceito de SSG do Next.js e utilização de uma API disponibilizada para buscar os produtos. 
 
-This application was developed through a technical challenge, where the purpose was to simulate an e-commerce. Next.js SSG concept was applied and an API available to consume in the challenge was used
+This application was developed through a technical challenge, where the purpose was to simulate an e-commerce. Next.js SSG concept was applied and an API available to search for products was used.
 
 ## 🛠 Technologies
 
