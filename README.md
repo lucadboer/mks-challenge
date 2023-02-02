@@ -37,7 +37,7 @@ $ git clone https://github.com/lucadboer/mks-challenge.git
 ### Acesse a pasta do projeto no prompt de comando ou pelo mouse | Access dir of the project in cmd or by mouse
 
 ```
-$ cd ignite-shop
+$ cd mks-challenge
 ```
 
 ### Instale as dependências da aplicação | Install the dependecies of the application
